@@ -1,3 +1,20 @@
+/*
+	객체를 생성하는 2가지 방법
+	1. 객체 리터럴 방식 : const sutdent = {name:'david'..} 중괄호열어 직점 담는 것
+	2. 생성자 함수 방식 : const student = new 생성자함수();
+	생성자 함수는 결국 객체를 생성해주는 함수
+
+	const 객체(인스턴스) = new 생성자함수();
+	생성자를 통해서 만들어진 객체를 instance라고 한다.
+
+	class 클래스명 {
+		생성자함수(담길값1, 담길값2){
+			this.키2 = 담길값1;
+			this.키2 = 담길값2;
+		}
+	}
+*/
+
 class FontStyle {
 	//두번째 인수로 boolean값 전달 시 해당 값은 this.isWeight라는 인스턴스 객체의 property에 등록되고
 	constructor(el, isWeight = true) {
@@ -24,10 +41,6 @@ class FontStyle {
 }
 
 const instance1 = new FontStyle('#tit1');
-console.dir(instance1);
-instance1.isWeight = false;
-
-instance1.changeSize('100px');
 
 /*
 	프로퍼티 접근자

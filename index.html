@@ -13,6 +13,44 @@
 <body>
   <h1 id="tit1">hello</h1>
   <h1 id="tit2">world</h1>
+
+  <script>
+    //객체 리터럴 방식으로 생성한 일반 객체
+    //프로퍼티는 같고 밸류는 다름
+    const s1 = {
+      name: 'david',
+      age: 20
+    }
+    const s2 = {
+      name: 'andy',
+      age: 53
+    }
+
+    //생성자함수를 통해서 생성한 객체 : instance (복사본)
+    //인스턴스 활용하는 이유는 (메서드를 편하게 등록함으로써 공통의 구조화된 객체를 한번에 변경할 수 있음)
+
+    class Student {
+      constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        this.school = 'abc school'
+      }
+      changeSchool(schoolName) {
+        this.school = schoolName;
+      }
+    }
+
+    const s3 = new Student('emily', 40);
+    const s4 = new Student('paul', 20);
+    const s5 = new Student('jin', 30);
+    console.log(s3);
+    console.log(s4);
+    console.log(s5);
+
+    [s3, s4, s5].map(el => el.changeSchool('dcodelab'))
+
+
+  </script>
 </body>
 
 </html>
