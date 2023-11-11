@@ -1,11 +1,12 @@
 class FontStyle {
-	//파라미터를 안넣었을 때 default parameter 지정할 수도 있음
-	constructor(el, size, color = 'hotpink') {
+	//두번째 인수로 boolean값 전달 시 해당 값은 this.isWeight라는 인스턴스 객체의 property에 등록되고
+	constructor(el, isWeight = true) {
 		this.el = document.querySelector(el);
-		this.changeSize(size);
-		this.changeColor(color);
+		this.isWeight = true;
 	}
 	changeSize(size) {
+		//해당 property값에 따라서 내부 메서드가 다르게 실행됨
+		if (!this.isWeight) return console.error('not working...');
 		this.el.style.fontSize = size;
 	}
 	changeColor(color) {
@@ -13,5 +14,17 @@ class FontStyle {
 	}
 }
 
-new FontStyle('#tit1', '100px', 'pink');
-new FontStyle('#tit2', '50px');
+const instance1 = new FontStyle('#tit1');
+console.dir(instance1);
+instance1.isWeight = false;
+
+instance1.changeSize('100px');
+
+/*
+	프로퍼티 접근자
+	get : 생성자가 특정 프로퍼티를 읽을 때 실행되는 함수 등록 시
+	set : 생성자가 해당 프로퍼티에 value값을 담으려고 할 때 실행될 함수 등록시
+
+	프로퍼티 접근자 쓰는 이유?
+	- 생성자 안쪽에서 함부로 변경이 안되는 프로퍼티를 인스턴스에서 변경하려고 할 때 변경하지 못하도록 강제하는 틀
+*/

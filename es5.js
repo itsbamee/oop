@@ -49,8 +49,8 @@ FontStyle.prototype.changeColor = function (color) {
 
 const instance1 = new FontStyle('#tit1');
 const instance2 = new FontStyle('#tit2');
-
 console.log(instance1);
+
 // instance1.el = abc;
 instance1.changeSize = function (el) {
 	console.log(el);
