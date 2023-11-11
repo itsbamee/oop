@@ -39,7 +39,7 @@
         this.school = schoolName;
       }
     }
-
+    //s3이 객체(instance), student가 생성자
     const s3 = new Student('emily', 40);
     const s4 = new Student('paul', 20);
     const s5 = new Student('jin', 30);
@@ -48,7 +48,7 @@
     console.log(s5);
 
     [s3, s4, s5].map(el => el.changeSchool('dcodelab'))
-
+    //ex) s3.changeSchool = 'a'; -> a라는 학교 이름으로 변경 되기도 함
 
   </script>
 </body>
