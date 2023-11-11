@@ -4,6 +4,15 @@ class FontStyle {
 		this.el = document.querySelector(el);
 		this.isWeight = true;
 	}
+	//isWeight라는 프로퍼티에 읽을 때 실행되는 메서드 (접근하는 순간에 실행되는 함수)
+	get isWeight() {
+		return this.value;
+	}
+
+	//isWeight라는 프로퍼티에 값을 담으려고 할 때 실행되는 메서드
+	set isWeight(value) {
+		this.value = value === true ? value : (value = true);
+	}
 	changeSize(size) {
 		//해당 property값에 따라서 내부 메서드가 다르게 실행됨
 		if (!this.isWeight) return console.error('not working...');
